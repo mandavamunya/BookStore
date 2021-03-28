@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.6.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{51402402-CE1B-440A-9B27-C2F0F8DE2559}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{519B2334-9B8B-4549-9E33-3E505D8B2A24}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Books", "Books", "{77473AB3-D9FD-4EDE-8BF0-5A3E523BC172}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{E70D1656-2982-4E72-860A-E391DC8A6FB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Books.Api", "src\Microservices\Books\Api\BookStore.Books.Api\BookStore.Books.Api.csproj", "{EDF3F33F-6BDD-421D-95BA-929817F30429}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Debug|x64.Build.0 = Debug|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Debug|x86.Build.0 = Debug|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Release|x64.ActiveCfg = Release|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Release|x64.Build.0 = Release|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Release|x86.ActiveCfg = Release|Any CPU
+		{EDF3F33F-6BDD-421D-95BA-929817F30429}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{519B2334-9B8B-4549-9E33-3E505D8B2A24} = {51402402-CE1B-440A-9B27-C2F0F8DE2559}
+		{77473AB3-D9FD-4EDE-8BF0-5A3E523BC172} = {519B2334-9B8B-4549-9E33-3E505D8B2A24}
+		{E70D1656-2982-4E72-860A-E391DC8A6FB1} = {77473AB3-D9FD-4EDE-8BF0-5A3E523BC172}
+		{EDF3F33F-6BDD-421D-95BA-929817F30429} = {E70D1656-2982-4E72-860A-E391DC8A6FB1}
+	EndGlobalSection
+EndGlobal
