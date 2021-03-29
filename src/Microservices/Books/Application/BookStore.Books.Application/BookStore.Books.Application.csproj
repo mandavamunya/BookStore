@@ -9,4 +9,7 @@
     <Folder Include="Services\" />
     <Folder Include="DTOs\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\BookStore.Books.Data\BookStore.Books.Data.csproj" />
+  </ItemGroup>
 </Project>
