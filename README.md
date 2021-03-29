@@ -1,6 +1,6 @@
-## BookStore
+# BookStore
 
-# Run the Function
+## Run the Function
 To run the function locally install azure-functions-core-tools by following the instructions [1]. 
 
 Navigate to the api or function root directory:
@@ -15,7 +15,7 @@ Then run the command:
 func host start --verbose
 ```
 
-# Run the UI angular web app
+## Run the UI angular web app
 To run the angular web application locally use visual studio or dotnet cli.
 
 To use dotnet cli you should have the dotnet cli installed on your machine.
@@ -34,5 +34,5 @@ dotnet run
 
 
 
-# Reference
+## Reference
 1. https://github.com/Azure/azure-functions-core-tools
