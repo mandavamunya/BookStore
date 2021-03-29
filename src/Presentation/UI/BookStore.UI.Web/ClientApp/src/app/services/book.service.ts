@@ -10,19 +10,23 @@ import { BookDetailRequest } from "../interfaces/book-detail-request.interface";
 export class BookService {
     constructor(private http: HttpClient) {}
 
-    getBookDetails(request: BookDetailRequest): Observable<any> {
-        return this.http.post(environment.baseApiUrl + API_PATH_BOOK_DETAILS, request).pipe(
-            map((res: any) => {
-                return res.response
-            })
-            // Http Interceptor will handle the errors 
-            // Therefore we can drop the following lines
-            // ,catchError((error: any) => {
-            //    const message =  error.message ? error.message : error.error
-            //    return of (message);
-            // })
-        );
-    }
+
+  // example post method
+  postBookDetails(request: BookDetailRequest): Observable<any> {
+      return this.http.post(environment.baseApiUrl + API_PATH_BOOK_DETAILS, request).pipe(
+          map((res: any) => {
+              return res.response
+          })
+      );
+  }
+
+  getBookDetails(request: BookDetailRequest): Observable<any> {
+    return this.http.get(environment.baseApiUrl + API_PATH_BOOK_DETAILS + request.id).pipe(
+      map((res: any) => {
+        return res.response
+      })
+    );
+  }
 
     getSearchResult(query: string): Observable<any> {
         return this.http.get(environment.baseApiUrl + API_PATH_SEARCH + query).pipe(

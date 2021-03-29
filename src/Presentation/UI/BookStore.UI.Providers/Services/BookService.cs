@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using BookStore.UI.Providers.DTOs;
@@ -19,7 +18,7 @@ namespace BookStore.UI.Providers.Services
         // http://localhost:7071/api/GetBookDetails
         public async Task<BookDetails> GetBookDetails(string id)
         {
-            var json = JsonConvert.SerializeObject(id);
+            var json = JsonConvert.SerializeObject(new  BookDetailRequest(id));
             using (var response = await _httpClient.PostAsync("api/GetBookDetails", new StringContent(json, Encoding.UTF8, "application/json")))
             {
                 var data = await response.Content.ReadAsStringAsync();

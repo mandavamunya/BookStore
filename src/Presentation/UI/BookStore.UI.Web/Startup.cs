@@ -12,6 +12,9 @@ namespace BookStore.UI.Web
 {
     public class Startup
     {
+
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -33,6 +36,17 @@ namespace BookStore.UI.Web
             {
                 client.BaseAddress = new Uri(Configuration.GetSection("ServiceProviders")["BooksLibraryBase"]);
             });
+
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins(Configuration.GetValue<string>("Settings:AllowedOrigins"));
+                                  });
+            });
+
 
         }
 
@@ -58,7 +72,7 @@ namespace BookStore.UI.Web
             }
 
             app.UseRouting();
-
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -78,6 +92,11 @@ namespace BookStore.UI.Web
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+
+            app.UseEndpoints(endPoints => {
+                endPoints.MapControllers().RequireCors(MyAllowSpecificOrigins);
+            });
+
         }
     }
 }
