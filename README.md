@@ -3,7 +3,7 @@
 ## Topics covered
 Microservices architecture, serverless computing, clean architecture
 
-# Debuggin and development
+# Debugging and development
 For debugging and development purposes you will need to run you applications locally.
 
 ## Run the Function
@@ -20,7 +20,8 @@ Then run the command:
 ```powershell
 func host start --verbose
 ```
-<!--<img src="https://github.com/mandavamunya/BookStore/blob/main/image/worker_started_initialized.png" alt="" title="Entity Relational Diagram" align="right" width="400" height="450" />-->
+![](https://github.com/mandavamunya/BookStore/blob/main/image/worker_started_initialized.png)
+
 ## Run the UI angular web app
 To run the angular web application locally use visual studio or dotnet cli.
 
@@ -37,14 +38,14 @@ And then run the command:
 ```powershell
 dotnet run
 ```
+![](https://github.com/mandavamunya/BookStore/blob/main/images/screen1.png)
 
-<!--<img src="https://github.com/mandavamunya/BookStore/blob/main/image/screen1.png" alt="" title="Entity Relational Diagram" align="right" width="400" height="450" />-->
 
-<!--<img src="https://github.com/mandavamunya/BookStore/blob/main/image/screen2.png" alt="" title="Entity Relational Diagram" align="right" width="400" height="450" />-->
+![](https://github.com/mandavamunya/BookStore/blob/main/images/screen2.png)
 
-<!--<img src="https://github.com/mandavamunya/BookStore/blob/main/image/screen3.png" alt="" title="Entity Relational Diagram" align="right" width="400" height="450" />-->
+![](https://github.com/mandavamunya/BookStore/blob/main/images/screen3.png)
 
-<!--<img src="https://github.com/mandavamunya/BookStore/blob/main/image/screen4.png" alt="" title="Entity Relational Diagram" align="right" width="400" height="450" />-->
+![](https://github.com/mandavamunya/BookStore/blob/main/images/screen4.png)
 
 
 ## What's next / Outstanding
