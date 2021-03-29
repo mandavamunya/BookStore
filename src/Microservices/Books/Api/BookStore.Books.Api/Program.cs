@@ -1,12 +1,11 @@
 using System.Threading.Tasks;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Azure.Functions.Worker.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
-using BookStore.Books.Core.Interfaces;
 using BookStore.Books.Application.Providers;
 using BookStore.Books.Application.Services;
+using BookStore.Books.Application.Interfaces;
 
 namespace BookStore.Books.Api
 {
@@ -30,7 +29,7 @@ namespace BookStore.Books.Api
                 .ConfigureServices(services =>
                 {
                     services.AddHttpClient();
-                    services.AddSingleton<BookService>();
+                    services.AddSingleton<IBookService, BookService>();
 
                     services.AddHttpClient<IBookServiceProvider, BookServiceProvider>(client =>
                     {
