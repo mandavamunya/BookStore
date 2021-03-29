@@ -20,7 +20,7 @@ Then run the command:
 ```powershell
 func host start --verbose
 ```
-
+### Console showing that the worker was started and initialized successfully
 ![](https://github.com/mandavamunya/BookStore/blob/main/images/worker_started_initialized.png)
 
 ## Run the UI angular web app
@@ -58,6 +58,7 @@ dotnet run
 - Dockerize, make the application scalable using kubernetes and deploy to Azure AKS
 - Add centralized caching (redis cache) and or inmemory caching inorder to improve book search efficiency.
 - Add exception handling in the worker / azure function
+- Book card component to show more details
 
 ## Reference
 1. https://github.com/Azure/azure-functions-core-tools
