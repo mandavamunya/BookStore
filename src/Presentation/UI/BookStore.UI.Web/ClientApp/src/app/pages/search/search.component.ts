@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { BookService } from 'src/app/services/book.service';
+import { Book, Docs } from 'src/app/interfaces/book.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'search',
@@ -10,39 +12,38 @@ import { BookService } from 'src/app/services/book.service';
 })
 export class SearchComponent implements OnInit {
     // search q=the+lord+of+the+rings
-
+  cards: any;
+  searchResult : Book = <Book>{} ; 
   value = "the lord of the rings"
 
   constructor(public bookService: BookService, private breakpointObserver: BreakpointObserver) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
   
   search()
   {
     this.bookService.getSearchResult(this.value.replace(/\s/g, '+')).subscribe(response => {
-      console.log(response)
+      this.searchResult = response as Book;  
+      this.populateGrid(this.mapToGrid())
     })
   }
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
-        return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
-        ];
-      }
 
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
+  mapToGrid()
+  {
+    let rows = [] as any [];
+    this.searchResult.docs.forEach(function(doc) {
+      rows.push({title: doc.title, cols: 1, rows: 1})
     })
-  );
+    return rows;
+  }
+
+  populateGrid(rows: any[])
+  {
+    console.log(rows)
+    this.cards = rows;
+  }
 
 
 }

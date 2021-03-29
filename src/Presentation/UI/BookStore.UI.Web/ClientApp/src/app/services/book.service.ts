@@ -14,24 +14,24 @@ export class BookService {
   // example post method
   postBookDetails(request: BookDetailRequest): Observable<any> {
       return this.http.post(environment.baseApiUrl + API_PATH_BOOK_DETAILS, request).pipe(
-          map((res: any) => {
-              return res.response
+          map((response: any) => {
+              return response
           })
       );
   }
 
   getBookDetails(request: BookDetailRequest): Observable<any> {
     return this.http.get(environment.baseApiUrl + API_PATH_BOOK_DETAILS + request.id).pipe(
-      map((res: any) => {
-        return res.response
+      map((response: any) => {
+        return response
       })
     );
   }
 
     getSearchResult(query: string): Observable<any> {
         return this.http.get(environment.baseApiUrl + API_PATH_SEARCH + query).pipe(
-            map((res: any) => {
-                return res.response
+            map((response: any) => {
+                return response
             })
             // Http Interceptor will handle the errors 
             // Therefore we can drop the following lines

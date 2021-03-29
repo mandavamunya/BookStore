@@ -12,41 +12,36 @@ import { BookDetails } from 'src/app/interfaces/book-details.interface';
 })
 export class HomeComponent implements OnInit {
   // get featured book: OL17910702M
+  featuredBook : BookDetails  = <BookDetails>{} ; 
+  cards:  any;
 
   constructor(public bookService: BookService, private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit() 
   {
-    const request : BookDetailRequest = {
-      id: "OL17910702M"
-    };
+    const request : BookDetailRequest = { id: "OL17910702M" };
     this.bookService.getBookDetails(request).subscribe( response => {
-      console.log(response)
+      this.featuredBook = response as BookDetails
+      this.populateGrid()
     })
-    
   }
   
+  populateGrid(){
+    /** Based on the screen size, switch from standard to one column per row */
+    this.cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+      map(({ matches }) => {
+        if (matches) {
+          return [
+            { title: this.featuredBook.title, cols: 1, rows: 1 },
+          ];
+        }
 
-  /** Based on the screen size, switch from standard to one column per row */
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
-    map(({ matches }) => {
-      if (matches) {
         return [
-          { title: 'Card 1', cols: 1, rows: 1 },
-          { title: 'Card 2', cols: 1, rows: 1 },
-          { title: 'Card 3', cols: 1, rows: 1 },
-          { title: 'Card 4', cols: 1, rows: 1 }
+          { title: this.featuredBook.title, cols: 2, rows: 1 },
         ];
-      }
-
-      return [
-        { title: 'Card 1', cols: 2, rows: 1 },
-        { title: 'Card 2', cols: 1, rows: 1 },
-        { title: 'Card 3', cols: 1, rows: 2 },
-        { title: 'Card 4', cols: 1, rows: 1 }
-      ];
-    })
-  );
+      })
+    );
+  }
 
 
 
