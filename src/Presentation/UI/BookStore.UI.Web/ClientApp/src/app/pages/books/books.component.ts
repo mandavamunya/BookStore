@@ -14,10 +14,10 @@ export class BooksComponent {
     map(({ matches }) => {
       console.log(matches)
       return [
-        { title: 'Book 1', cols: 1, rows: 1 },
-        { title: 'Book 2', cols: 1, rows: 1 },
-        { title: 'Book 3', cols: 1, rows: 1 },
-        { title: 'Book 4', cols: 1, rows: 1 }
+        { title: 'Book 1', key: "", revision: "", cols: 1, rows: 1 },
+        { title: 'Book 2', key: "", revision: "", cols: 1, rows: 1 },
+        { title: 'Book 3', key: "", revision: "", cols: 1, rows: 1 },
+        { title: 'Book 4', key: "", revision: "", cols: 1, rows: 1 }
       ];
     })
   );

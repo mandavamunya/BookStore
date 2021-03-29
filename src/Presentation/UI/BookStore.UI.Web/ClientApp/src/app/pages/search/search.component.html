@@ -10,7 +10,7 @@
 
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards" [colspan]="card.cols" [rowspan]="card.rows">
-      <app-card [title]="card.title"></app-card>
+      <app-card [title]="card.title" [key]="card.key" [revision]="card.revision"></app-card>
     </mat-grid-tile>
   </mat-grid-list>
 </div>

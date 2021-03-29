@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   searchResult : Book = <Book>{} ; 
   value = "the lord of the rings"
 
-  constructor(public bookService: BookService, private breakpointObserver: BreakpointObserver) {}
+  constructor(public bookService: BookService) {}
 
   ngOnInit() {
 
@@ -34,14 +34,13 @@ export class SearchComponent implements OnInit {
   {
     let rows = [] as any [];
     this.searchResult.docs.forEach(function(doc) {
-      rows.push({title: doc.title, cols: 1, rows: 1})
+      rows.push({title: doc.title, key: doc.key.split('/').pop(), revision: "", cols: 1, rows: 1})
     })
     return rows;
   }
 
   populateGrid(rows: any[])
   {
-    console.log(rows)
     this.cards = rows;
   }
 

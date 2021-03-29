@@ -31,12 +31,13 @@ import { CardComponent } from './components/card/card.component';
 import { HomeComponent } from './pages/home/home.component';
 import { BookService } from './services/book.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BookComponent } from './pages/book/book.component';
 
 
 @NgModule({
   declarations: [
     AppComponent, DialogComponent, BooksComponent, SearchComponent, MenuComponent, NavMenuComponent, 
-    CardComponent, HomeComponent
+    CardComponent, HomeComponent, BookComponent
   ],
   imports: [
     BrowserModule,

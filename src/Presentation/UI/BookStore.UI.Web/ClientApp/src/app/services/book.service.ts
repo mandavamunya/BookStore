@@ -20,8 +20,8 @@ export class BookService {
       );
   }
 
-  getBookDetails(request: BookDetailRequest): Observable<any> {
-    return this.http.get(environment.baseApiUrl + API_PATH_BOOK_DETAILS + request.id).pipe(
+  getBookDetails(id: string): Observable<any> {
+    return this.http.get(environment.baseApiUrl + API_PATH_BOOK_DETAILS + id).pipe(
       map((response: any) => {
         return response
       })

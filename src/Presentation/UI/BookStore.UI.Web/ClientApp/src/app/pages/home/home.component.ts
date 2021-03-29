@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 import { BookService } from 'src/app/services/book.service';
-import { BookDetailRequest } from 'src/app/interfaces/book-detail-request.interface';
 import { BookDetails } from 'src/app/interfaces/book-details.interface';
 
 @Component({
@@ -19,8 +18,8 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() 
   {
-    const request : BookDetailRequest = { id: "OL17910702M" };
-    this.bookService.getBookDetails(request).subscribe( response => {
+    const id = "OL17910702M";
+    this.bookService.getBookDetails(id).subscribe( response => {
       this.featuredBook = response as BookDetails
       this.populateGrid()
     })
@@ -32,12 +31,12 @@ export class HomeComponent implements OnInit {
       map(({ matches }) => {
         if (matches) {
           return [
-            { title: this.featuredBook.title, cols: 1, rows: 1 },
+            { title: this.featuredBook.title, key: this.featuredBook.key.split('/').pop(), revision: "", cols: 1, rows: 1 },
           ];
         }
 
         return [
-          { title: this.featuredBook.title, cols: 2, rows: 1 },
+          { title: this.featuredBook.title, key: this.featuredBook.key.split('/').pop(), revision: "", cols: 2, rows: 1 },
         ];
       })
     );

@@ -1,8 +1,8 @@
 <div class="grid-container">
-  <h1 class="mat-h1">Home: Featured Book</h1>
+  <h1 class="mat-h1">Book</h1>
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
-      <app-card [title]="card.title" [key]="card.key" [revision] = "card.revision"></app-card>
+      <app-card [title]="card.title" [key]="card.key"></app-card>
     </mat-grid-tile>
   </mat-grid-list>
 </div>
