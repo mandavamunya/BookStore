@@ -39,13 +39,18 @@ And then run the command:
 ```powershell
 dotnet run
 ```
+
+### Home page showing the featured book with key (OL17910702M)
 ![](https://github.com/mandavamunya/BookStore/blob/main/images/screen1.png)
 
 
+### Search page showing result for the search query (the lord of the rings)
 ![](https://github.com/mandavamunya/BookStore/blob/main/images/screen2.png)
 
+### Search page showing a kebab menu item with option (Open Book)
 ![](https://github.com/mandavamunya/BookStore/blob/main/images/screen3.png)
 
+### Book page showing book details
 ![](https://github.com/mandavamunya/BookStore/blob/main/images/screen4.png)
 
 
