@@ -58,7 +58,7 @@ dotnet run
 - Dockerize, make the application scalable using kubernetes and deploy to Azure AKS
 - Add centralized caching (redis cache) and or inmemory caching inorder to improve book search efficiency.
 - Add exception handling in the worker / azure function
-- Book card component to show more details
+- The book card component must display more details e.g. publish name, author name and etc.
 
 ## Reference
 1. https://github.com/Azure/azure-functions-core-tools
