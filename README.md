@@ -44,7 +44,7 @@ dotnet run
 ![](https://github.com/mandavamunya/BookStore/blob/main/images/screen1.png)
 
 
-### Search page before clicking the search 
+### Search page before clicking the search icon / search button
 ![](https://github.com/mandavamunya/BookStore/blob/main/images/screen2_0.png)
 
 ### Search page showing result for the search query (the lord of the rings)
