@@ -44,8 +44,11 @@ dotnet run
 ![](https://github.com/mandavamunya/BookStore/blob/main/images/screen1.png)
 
 
+### Search page before clicking the search 
+![](https://github.com/mandavamunya/BookStore/blob/main/images/screen2_0.png)
+
 ### Search page showing result for the search query (the lord of the rings)
-![](https://github.com/mandavamunya/BookStore/blob/main/images/screen2.png)
+![](https://github.com/mandavamunya/BookStore/blob/main/images/screen2_1.png)
 
 ### Search page showing a kebab menu item with option (Open Book)
 ![](https://github.com/mandavamunya/BookStore/blob/main/images/screen3.png)
