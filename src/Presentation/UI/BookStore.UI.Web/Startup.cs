@@ -1,3 +1,5 @@
+using System;
+using BookStore.UI.Providers.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +28,12 @@ namespace BookStore.UI.Web
             {
                 configuration.RootPath = "ClientApp/dist";
             });
+
+            services.AddHttpClient<IBookService, BookService>(client =>
+            {
+                client.BaseAddress = new Uri(Configuration.GetSection("ServiceProviders")["BooksLibraryBase"]);
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
