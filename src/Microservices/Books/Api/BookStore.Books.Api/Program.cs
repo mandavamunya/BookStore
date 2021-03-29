@@ -4,8 +4,11 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Azure.Functions.Worker.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using BookStore.Books.Core.Interfaces;
+using BookStore.Books.Application.Providers;
+using BookStore.Books.Application.Services;
 
-namespace BookStore_Books_Api
+namespace BookStore.Books.Api
 {
     public class Program
     {
@@ -27,12 +30,12 @@ namespace BookStore_Books_Api
                 .ConfigureServices(services =>
                 {
                     services.AddHttpClient();
-                    //services.AddSingleton<BookService>();
+                    services.AddSingleton<BookService>();
 
-                    //services.AddHttpClient<IBookServiceProvider, BookServiceProvider>(client =>
-                    //{
-                     //   client.BaseAddress = new Uri(Environment.GetEnvironmentVariable("BookLibraryUrl"));
-                    //});
+                    services.AddHttpClient<IBookServiceProvider, BookServiceProvider>(client =>
+                    {
+                        client.BaseAddress = new Uri(Environment.GetEnvironmentVariable("BookLibraryUrl"));
+                    });
 
                 })
                 .Build();
