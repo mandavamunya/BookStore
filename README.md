@@ -20,7 +20,8 @@ Then run the command:
 ```powershell
 func host start --verbose
 ```
-![](https://github.com/mandavamunya/BookStore/blob/main/image/worker_started_initialized.png)
+
+![](https://github.com/mandavamunya/BookStore/blob/main/images/worker_started_initialized.png)
 
 ## Run the UI angular web app
 To run the angular web application locally use visual studio or dotnet cli.
